@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <base target="_self">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ELEVE TI - Tecnologia e Sistemas | Empresa Full Service em TI</title>
+    <meta name="description" content="A ELEVE TI cuida de toda a tecnologia da sua empresa para que você foque apenas no crescimento do negócio. Infraestrutura, cibersegurança, desenvolvimento e gestão completa.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#000000",
+                        secondary: "#333333",
+                        accent: "#FF6B00",
+                        dark: "#0F172A",
+                        light: "#F8FAFC",
+                        gray: {
+                            50: "#F9FAFB",
+                            100: "#F3F4F6",
+                            200: "#E5E7EB",
+                            300: "#D1D5DB",
+                            400: "#9CA3AF",
+                            500: "#6B7280",
+                            600: "#4B5563",
+                            700: "#374151",
+                            800: "#1F2937",
+                            900: "#111827"
+                        }
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .eleve-gradient {
+            background: linear-gradient(135deg, #000000 0%, #1F2937 100%);
+        }
+        .accent-gradient {
+            background: linear-gradient(135deg, #FF6B00 0%, #FF8C42 100%);
+        }
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .service-card {
+            transition: all 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .floating-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body class="font-inter bg-white text-gray-800">
+    <!-- Header/Navigation -->
+    <header class="sticky-nav bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 accent-gradient rounded-lg flex items-center justify-center">
+                        <i class="fas fa-server text-white text-2xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-black text-gray-900">ELEVE <span class="text-accent">TI</span></h1>
+                        <p class="text-xs text-gray-600">Tecnologia e Sistemas</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-accent font-medium transition-colors">Início</a>
+                    <a href="#servicos" class="text-gray-700 hover:text-accent font-medium transition-colors">Serviços</a>
+                    <a href="#diferenciais" class="text-gray-700 hover:text-accent font-medium transition-colors">Diferenciais</a>
+                    <a href="#sobre" class="text-gray-700 hover:text-accent font-medium transition-colors">Sobre</a>
+                    <a href="#contato" class="text-gray-700 hover:text-accent font-medium transition-colors">Contato</a>
+                </nav>
+
+                <!-- CTA Button -->
+                <button onclick="scrollToContato()" class="accent-gradient hover:opacity-90 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+                    <i class="fas fa-headset mr-2"></i>Falar com Especialista
+                </button>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuButton" class="lg:hidden text-gray-700">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobileMenu" class="hidden lg:hidden mt-4 pb-4 border-t border-gray-200">
+                <div class="flex flex-col space-y-4 pt-4">
+                    <a href="#home" class="text-gray-700 hover:text-accent font-medium transition-colors">Início</a>
+                    <a href="#servicos" class="text-gray-700 hover:text-accent font-medium transition-colors">Serviços</a>
+                    <a href="#diferenciais" class="text-gray-700 hover:text-accent font-medium transition-colors">Diferenciais</a>
+                    <a href="#sobre" class="text-gray-700 hover:text-accent font-medium transition-colors">Sobre</a>
+                    <a href="#contato" class="text-gray-700 hover:text-accent font-medium transition-colors">Contato</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="eleve-gradient text-white py-16 md:py-24">
+            <div class="container mx-auto px-4">
+                <div class="max-w-6xl mx-auto">
+                    <div class="grid lg:grid-cols-2 gap-12 items-center">
+                        <!-- Hero Content -->
+                        <div>
+                            <h1 class="text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight">
+                                Tecnologia que <span class="text-accent">sustenta</span>, <span class="text-accent">protege</span> e <span class="text-accent">impulsiona</span> o seu negócio
+                            </h1>
+                            
+                            <p class="text-xl text-gray-300 mb-8">
+                                Infraestrutura de TI, cibersegurança, desenvolvimento de sistemas e gestão completa de tecnologia para empresas que não podem parar.
+                            </p>
+                            
+                            <div class="flex flex-col sm:flex-row gap-4">
+                                <button onclick="scrollToContato()" class="accent-gradient hover:opacity-90 text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-xl text-lg">
+                                    <i class="fas fa-clipboard-check mr-2"></i>Solicitar Diagnóstico Gratuito
+                                </button>
+                                <button onclick="scrollToServicos()" class="bg-white hover:bg-gray-100 text-gray-900 font-bold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 border border-gray-300 text-lg">
+                                    <i class="fas fa-cogs mr-2"></i>Conhecer Serviços
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Hero Image/Illustration -->
+                        <div class="relative">
+                            <div class="bg-gray-800 rounded-2xl p-8 shadow-2xl">
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="bg-gray-900 p-6 rounded-xl text-center">
+                                        <i class="fas fa-shield-alt text-accent text-4xl mb-4"></i>
+                                        <h3 class="font-bold text-white">Segurança</h3>
+                                    </div>
+                                    <div class="bg-gray-900 p-6 rounded-xl text-center">
+                                        <i class="fas fa-cloud text-accent text-4xl mb-4"></i>
+                                        <h3 class="font-bold text-white">Infraestrutura</h3>
+                                    </div>
+                                    <div class="bg-gray-900 p-6 rounded-xl text-center">
+                                        <i class="fas fa-code text-accent text-4xl mb-4"></i>
+                                        <h3 class="font-bold text-white">Desenvolvimento</h3>
+                                    </div>
+                                    <div class="bg-gray-900 p-6 rounded-xl text-center">
+                                        <i class="fas fa-chart-line text-accent text-4xl mb-4"></i>
+                                        <h3 class="font-bold text-white">Gestão</h3>
+                                    </div>
+                                </div>
+                                <div class="mt-8 text-center">
+                                    <p class="text-gray-300 text-lg">
+                                        <i class="fas fa-quote-left text-accent mr-2"></i>
+                                        Cuidamos de toda a tecnologia para que você foque no crescimento do negócio
+                                        <i class="fas fa-quote-right text-accent ml-2"></i>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="absolute -top-4 -right-4 w-24 h-24 bg-accent rounded-full opacity-20 floating-animation"></div>
+                            <div class="absolute -bottom-4 -left-4 w-20 h-20 bg-accent rounded-full opacity-20 floating-animation" style="animation-delay: 2s;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- O Que Fazemos Section -->
+        <section id="servicos" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl font-black text-gray-900 mb-4">O Que Fazemos</h2>
+                        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                            A ELEVE TI é uma empresa <span class="font-bold text-accent">full service</span>, preparada para assumir toda a operação tecnológica da sua empresa — do servidor ao software, da segurança ao suporte diário.
+                        </p>
+                    </div>
+
+                    <!-- Serviços Grid -->
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Serviço 1: Infraestrutura -->
+                        <div class="service-card bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
+                            <div class="w-16 h-16 accent-gradient rounded-xl flex items-center justify-center mb-6">
+                                <i class="fas fa-server text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Infraestrutura de TI</h3>
+                            <p class="text-gray-600 mb-6">
+                                Projetamos, implementamos e mantemos toda a infraestrutura de TI da sua empresa, garantindo estabilidade, performance e continuidade.
+                            </p>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-accent mt-1 mr-3"></i>
+                                    <span>Redes corporativas</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-accent mt-1 mr-3"></i>
+                                    <span>Servidores físicos e em nuvem</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-accent mt-1 mr-3"></i>
+                                    <span>Backup e recuperação de dados</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-accent mt-1 mr-3"></i>
+                                    <span>Monitoramento contínuo</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Serviço 2: Cibersegurança -->
+                        <div class="service-card bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
+                            <div class="w-16 h-16 accent-gradient rounded-xl flex items-center justify-center mb-6">
+                                <i class="fas fa-shield-alt text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Cibersegurança</h3>
+                            <p class="text-gray-600 mb-6">
+                                Protegemos sua empresa contra ataques, vazamentos e indisponibilidade, com soluções modernas de segurança digital.
+                            </p>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-accent mt-1 mr-3"></i>
+                                    <span>Firewall e proteção de rede</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-accent mt-1 mr-3"></i>
+                                    <span>Antivírus corporativo</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-accent mt-1 mr-3"></i>
+                                    <span>Políticas de segurança</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-accent mt-1 mr-3"></i>
+                                    <span>Backup seguro e redundante</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Serviço 3: Desenvolvimento -->
+                        <div class="service-card bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
+                            <div class="w-16 h-16 accent-gradient rounded-xl flex items-center justify-center mb-6">
+                                <i class="fas fa-code text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Desenvolvimento de Software</h3>
+                            <p class="text-gray-600 mb-6">
+                                Criamos sistemas sob medida para otimizar processos, reduzir custos e aumentar a produtividade do seu negócio.
+                            </p>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-accent mt-1 mr-3"></i>
+                                    <span>Sistemas web</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-accent mt-1 mr-3"></i>
+                                    <span>Aplicativos mobile</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-accent mt-1 mr-3"></i>
+                                    <span>Integrações</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-accent mt-1 mr-3"></i>
+                                    <span>Automação de processos</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Serviço 4: Consultoria -->
+                        <div class="service-card bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
+                            <div class="w-16 h-16 accent-gradient rounded-xl flex items-center justify-center mb-6">
+                                <i class="fas fa-chart-line text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Consultoria em Tecnologia</h3>
+                            <p class="text-gray-600 mb-6">
+                                Ajudamos sua empresa a tomar decisões estratégicas em tecnologia, alinhadas aos objetivos do negócio.
+                            </p>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-accent mt-1 mr-3"></i>
+                                    <span>Diagnóstico tecnológico</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-accent mt-1 mr-3"></i>
+                                    <span>Planejamento de TI</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-accent mt-1 mr-3"></i>
+                                    <span>Modernização de sistemas</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-accent mt-1 mr-3"></i>
+                                    <span>Transformação digital</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Serviço 5: Gestão Terceirizada -->
+                        <div class="service-card bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
+                            <div class="w-16 h-16 accent-gradient rounded-xl flex items-center justify-center mb-6">
+                                <i class="fas fa-cogs text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Gestão de TI Terceirizada</h3>
+                            <p class="text-gray-600 mb-6">
+                                Assumimos toda a gestão de TI da sua empresa, com atendimento rápido, monitoramento contínuo e suporte especializado.
+                            </p>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-accent mt-1 mr-3"></i>
+                                    <span>Suporte técnico</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-accent mt-1 mr-3"></i>
+                                    <span>Gestão de ativos</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-accent mt-1 mr-3"></i>
+                                    <span>Monitoramento 24/7</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-accent mt-1 mr-3"></i>
+                                    <span>SLA e relatórios</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Serviço 6: Suporte -->
+                        <div class="service-card bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
+                            <div class="w-16 h-16 accent-gradient rounded-xl flex items-center justify-center mb-6">
+                                <i class="fas fa-headset text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Suporte Especializado</h3>
+                            <p class="text-gray-600 mb-6">
+                                Oferecemos suporte técnico especializado para garantir a continuidade das operações da sua empresa.
+                            </p>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-accent mt-1 mr-3"></i>
+                                    <span>Atendimento remoto e presencial</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-accent mt-1 mr-3"></i>
+                                    <span>Resolução de incidentes</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-accent mt-1 mr-3"></i>
+                                    <span>Manutenção preventiva</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-accent mt-1 mr-3"></i>
+                                    <span>Treinamento de usuários</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Por Que a ELEVE TI Section -->
+        <section id="diferenciais" class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl font-black text-gray-900 mb-4">Por Que a ELEVE TI?</h2>
+                        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                            Diferenciais que nos tornam o parceiro ideal para a transformação digital da sua empresa
+                        </p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Diferencial 1 -->
+                        <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200">
+                            <div class="w-14 h-14 bg-accent bg-opacity-10 rounded-xl flex items-center justify-center mb-6">
+                                <i class="fas fa-layer-group text-accent text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-4">Empresa Full Service</h3>
+                            <p class="text-gray-600">
+                                Oferecemos soluções completas em TI, eliminando a necessidade de múltiplos fornecedores e simplificando a gestão.
+                            </p>
+                        </div>
+
+                        <!-- Diferencial 2 -->
+                        <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200">
+                            <div class="w-14 h-14 bg-accent bg-opacity-10 rounded-xl flex items-center justify-center mb-6">
+                                <i class="fas fa-comments text-accent text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-4">Atendimento Consultivo</h3>
+                            <p class="text-gray-600">
+                                Não somos apenas técnicos, somos consultores que entendem seu negócio e propõem soluções estratégicas.
+                            </p>
+                        </div>
+
+                        <!-- Diferencial 3 -->
+                        <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200">
+                            <div class="w-14 h-14 bg-accent bg-opacity-10 rounded-xl flex items-center justify-center mb-6">
+                                <i class="fas fa-puzzle-piece text-accent text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-4">Soluções Personalizadas</h3>
+                            <p class="text-gray-600">
+                                Desenvolvemos soluções sob medida para as necessidades específicas do seu negócio, não oferecemos pacotes prontos.
+                            </p>
+                        </div>
+
+                        <!-- Diferencial 4 -->
+                        <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200">
+                            <div class="w-14 h-14 bg-accent bg-opacity-10 rounded-xl flex items-center justify-center mb-6">
+                                <i class="fas fa-lock text-accent text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-4">Foco em Segurança</h3>
+                            <p class="text-gray-600">
+                                Priorizamos a segurança em todas as nossas soluções, protegendo seus dados e garantindo a continuidade do negócio.
+                            </p>
+                        </div>
+
+                        <!-- Diferencial 5 -->
+                        <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200">
+                            <div class="w-14 h-14 bg-accent bg-opacity-10 rounded-xl flex items-center justify-center mb-6">
+                                <i class="fas fa-chart-line-down text-accent text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-4">Redução de Custos</h3>
+                            <p class="text-gray-600">
+                                Otimizamos sua infraestrutura de TI, reduzindo custos operacionais e aumentando a eficiência.
+                            </p>
+                        </div>
+
+                        <!-- Diferencial 6 -->
+                        <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200">
+                            <div class="w-14 h-14 bg-accent bg-opacity-10 rounded-xl flex items-center justify-center mb-6">
+                                <i class="fas fa-bolt text-accent text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-4">Suporte Ágil</h3>
+                            <p class="text-gray-600">
+                                Atendimento rápido e eficiente, com profissionais especializados prontos para resolver suas necessidades.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Para Quem É Section -->
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl font-black text-gray-900 mb-4">Para Quem É</h2>
+                        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                            Atendemos empresas que precisam de tecnologia confiável e segura para crescer
+                        </p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <!-- Cliente 1 -->
+                        <div class="bg-white p-8 rounded-2xl shadow-lg text-center">
+                            <div class="w-20 h-20 accent-gradient rounded-full flex items-center justify-center mx-auto mb-6">
+                                <i class="fas fa-building text-white text-3xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">Pequenas e Médias Empresas</h3>
+                            <p class="text-gray-600">
+                                Empresas em crescimento que precisam de infraestrutura sólida para escalar operações.
+                            </p>
+                        </div>
+
+                        <!-- Cliente 2 -->
+                        <div class="bg-white p-8 rounded-2xl shadow-lg text-center">
+                            <div class="w-20 h-20 accent-gradient rounded-full flex items-center justify-center mx-auto mb-6">
+                                <i class="fas fa-briefcase text-white text-3xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">Escritórios</h3>
+                            <p class="text-gray-600">
+                                Escritórios de advocacia, contabilidade e consultoria que dependem de tecnologia confiável.
+                            </p>
+                        </div>
+
+                        <!-- Cliente 3 -->
+                        <div class="bg-white p-8 rounded-2xl shadow-lg text-center">
+                            <div class="w-20 h-20 accent-gradient rounded-full flex items-center justify-center mx-auto mb-6">
+                                <i class="fas fa-industry text-white text-3xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">Indústrias</h3>
+                            <p class="text-gray-600">
+                                Empresas industriais que necessitam de sistemas robustos para automação e controle.
+                            </p>
+                        </div>
+
+                        <!-- Cliente 4 -->
+                        <div class="bg-white p-8 rounded-2xl shadow-lg text-center">
+                            <div class="w-20 h-20 accent-gradient rounded-full flex items-center justify-center mx-auto mb-6">
+                                <i class="fas fa-store text-white text-3xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">Comércios</h3>
+                            <p class="text-gray-600">
+                                Lojas e redes varejistas que precisam de sistemas de gestão e segurança eficientes.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Como Funciona Section -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl font-black text-gray-900 mb-4">Como Funciona</h2>
+                        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                            Um processo simples e eficiente para transformar a tecnologia da sua empresa
+                        </p>
+                    </div>
+
+                    <div class="grid md:grid-cols-4 gap-8">
+                        <!-- Passo 1 -->
+                        <div class="text-center">
+                            <div class="relative">
+                                <div class="w-20 h-20 accent-gradient rounded-full flex items-center justify-center mx-auto mb-6">
+                                    <span class="text-white text-2xl font-bold">1</span>
+                                </div>
+                                <div class="hidden md:block absolute top-10 left-full w-full h-1 bg-gray-300 -ml-4"></div>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">Diagnóstico Inicial</h3>
+                            <p class="text-gray-600">
+                                Avaliamos toda a infraestrutura e processos de TI da sua empresa.
+                            </p>
+                        </div>
+
+                        <!-- Passo 2 -->
+                        <div class="text-center">
+                            <div class="relative">
+                                <div class="w-20 h-20 accent-gradient rounded-full flex items-center justify-center mx-auto mb-6">
+                                    <span class="text-white text-2xl font-bold">2</span>
+                                </div>
+                                <div class="hidden md:block absolute top-10 left-full w-full h-1 bg-gray-300 -ml-4"></div>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">Proposta Personalizada</h3>
+                            <p class="text-gray-600">
+                                Desenvolvemos um plano de ação específico para suas necessidades.
+                            </p>
+                        </div>
+
+                        <!-- Passo 3 -->
+                        <div class="text-center">
+                            <div class="relative">
+                                <div class="w-20 h-20 accent-gradient rounded-full flex items-center justify-center mx-auto mb-6">
+                                    <span class="text-white text-2xl font-bold">3</span>
+                                </div>
+                                <div class="hidden md:block absolute top-10 left-full w-full h-1 bg-gray-300 -ml-4"></div>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">Implementação</h3>
+                            <p class="text-gray-600">
+                                Executamos as soluções com metodologia ágil e mínima interferência.
+                            </p>
+                        </div>
+
+                        <!-- Passo 4 -->
+                        <div class="text-center">
+                            <div class="w-20 h-20 accent-gradient rounded-full flex items-center justify-center mx-auto mb-6">
+                                <span class="text-white text-2xl font-bold">4</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">Suporte Contínuo</h3>
+                            <p class="text-gray-600">
+                                Acompanhamos e otimizamos continuamente sua infraestrutura.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="mt-16 text-center">
+                        <button onclick="scrollToContato()" class="accent-gradient hover:opacity-90 text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-xl text-lg">
+                            <i class="fas fa-play-circle mr-2"></i>Iniciar Diagnóstico Gratuito
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sobre Nós Section -->
+        <section id="sobre" class="py-16 eleve-gradient text-white">
+            <div class="container mx-auto px-4">
+                <div class="max-w-6xl mx-auto">
+                    <div class="grid lg:grid-cols-2 gap-12 items-center">
+                        <!-- Sobre Content -->
+                        <div>
+                            <h2 class="text-4xl font-black mb-6">Sobre a ELEVE TI</h2>
+                            <p class="text-xl text-gray-300 mb-6">
+                                A <span class="font-bold text-accent">ELEVE TI</span> nasceu com o propósito de elevar o nível da tecnologia dentro das empresas, oferecendo soluções completas, seguras e alinhadas ao crescimento do negócio.
+                            </p>
+                            <p class="text-gray-300 mb-6">
+                                Somos uma empresa full service em TI, preparada para assumir toda a operação tecnológica da sua empresa. Nossa missão é simplificar a tecnologia, tornando-a uma aliada estratégica para o crescimento do seu negócio.
+                            </p>
+                            <p class="text-gray-300">
+                                Com uma equipe de especialistas multidisciplinares, combinamos expertise técnica com visão de negócios para entregar soluções que realmente fazem a diferença.
+                            </p>
+                        </div>
+
+                        <!-- Sobre Stats -->
+                        <div class="bg-gray-800 bg-opacity-50 rounded-2xl p-8">
+                            <div class="grid grid-cols-2 gap-6">
+                                <div class="text-center">
+                                    <div class="text-4xl font-bold text-accent mb-2">100+</div>
+                                    <div class="text-gray-300">Clientes Atendidos</div>
+                                </div>
+                                <div class="text-center">
+                                    <div class="text-4xl font-bold text-accent mb-2">24/7</div>
+                                    <div class="text-gray-300">Suporte</div>
+                                </div>
+                                <div class="text-center">
+                                    <div class="text-4xl font-bold text-accent mb-2">50+</div>
+                                    <div class="text-gray-300">Projetos Concluídos</div>
+                                </div>
+                                <div class="text-center">
+                                    <div class="text-4xl font-bold text-accent mb-2">99%</div>
+                                    <div class="text-gray-300">Satisfação</div>
+                                </div>
+                            </div>
+                            <div class="mt-8 pt-8 border-t border-gray-700">
+                                <h3 class="text-xl font-bold mb-4">Nossos Valores</h3>
+                                <div class="space-y-3">
+                                    <div class="flex items-start">
+                                        <i class="fas fa-check text-accent mt-1 mr-3"></i>
+                                        <span class="text-gray-300">Excelência técnica</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-check text-accent mt-1 mr-3"></i>
+                                        <span class="text-gray-300">Transparência</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-check text-accent mt-1 mr-3"></i>
+                                        <span class="text-gray-300">Inovação constante</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-check text-accent mt-1 mr-3"></i>
+                                        <span class="text-gray-300">Parceria de longo prazo</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Final Section -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto text-center">
+                    <div class="bg-gradient-to-r from-gray-900 to-gray-800 rounded-3xl p-12 text-white shadow-2xl">
+                        <h2 class="text-4xl font-black mb-6">
+                            Pare de se preocupar com TI. Deixe isso com a <span class="text-accent">ELEVE TI</span>.
+                        </h2>
+                        <p class="text-xl text-gray-300 mb-8">
+                            Foque no crescimento do seu negócio enquanto cuidamos de toda a tecnologia para você.
+                        </p>
+                        <button onclick="scrollToContato()" class="accent-gradient hover:opacity-90 text-white font-bold py-5 px-10 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-2xl text-xl">
+                            <i class="fas fa-clipboard-check mr-3"></i>Solicitar Diagnóstico Gratuito
+                        </button>
+                        <div class="mt-8 text-gray-400">
+                            <p><i class="fas fa-clock mr-2"></i>Diagnóstico em até 48 horas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contato Section -->
+        <section id="contato" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl font-black text-gray-900 mb-4">Entre em Contato</h2>
+                        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                            Pronto para elevar a tecnologia da sua empresa? Fale com nossos especialistas.
+                        </p>
+                    </div>
+
+                    <div class="grid lg:grid-cols-2 gap-12">
+                        <!-- Formulário de Contato -->
+                        <div class="bg-white rounded-2xl p-8 shadow-lg">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-6">Envie sua Mensagem</h3>
+                            <form id="contactForm" class="space-y-6">
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label for="nome" class="block text-gray-700 font-medium mb-2">Nome *</label>
+                                        <input type="text" id="nome" name="nome" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all">
+                                    </div>
+                                    <div>
+                                        <label for="empresa" class="block text-gray-700 font-medium mb-2">Empresa</label>
+                                        <input type="text" id="empresa" name="empresa" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all">
+                                    </div>
+                                </div>
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label for="email" class="block text-gray-700 font-medium mb-2">E-mail *</label>
+                                        <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all">
+                                    </div>
+                                    <div>
+                                        <label for="telefone" class="block text-gray-700 font-medium mb-2">Telefone *</label>
+                                        <input type="tel" id="telefone" name="telefone" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all">
+                                    </div>
+                                </div>
+                                <div>
+                                    <label for="servico" class="block text-gray-700 font-medium mb-2">Serviço de Interesse</label>
+                                    <select id="servico" name="servico" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all">
+                                        <option value="">Selecione um serviço</option>
+                                        <option value="infraestrutura">Infraestrutura de TI</option>
+                                        <option value="seguranca">Cibersegurança</option>
+                                        <option value="desenvolvimento">Desenvolvimento de Software</option>
+                                        <option value="consultoria">Consultoria em Tecnologia</option>
+                                        <option value="gestao">Gestão de TI Terceirizada</option>
+                                        <option value="suporte">Suporte Especializado</option>
+                                        <option value="diagnostico">Diagnóstico Gratuito</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="mensagem" class="block text-gray-700 font-medium mb-2">Mensagem *</label>
+                                    <textarea id="mensagem" name="mensagem" rows="4" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all"></textarea>
+                                </div>
+                                <button type="submit" class="w-full accent-gradient hover:opacity-90 text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105">
+                                    <i class="fas fa-paper-plane mr-2"></i>Enviar Mensagem
+                                </button>
+                            </form>
+                        </div>
+
+                        <!-- Informações de Contato -->
+                        <div>
+                            <div class="bg-gray-900 rounded-2xl p-8 text-white mb-8">
+                                <h3 class="text-2xl font-bold mb-6">Informações de Contato</h3>
+                                <div class="space-y-6">
+                                    <div class="flex items-start">
+                                        <div class="w-12 h-12 bg-accent bg-opacity-20 rounded-lg flex items-center justify-center mr-4">
+                                            <i class="fas fa-phone text-accent text-xl"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-bold text-lg">Telefone</h4>
+                                            <p class="text-gray-300">(95) 98121-7811</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="w-12 h-12 bg-accent bg-opacity-20 rounded-lg flex items-center justify-center mr-4">
+                                            <i class="fas fa-envelope text-accent text-xl"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-bold text-lg">E-mail</h4>
+                                            <p class="text-gray-300">eleveitrr@gmail.com</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="w-12 h-12 bg-accent bg-opacity-20 rounded-lg flex items-center justify-center mr-4">
+                                            <i class="fab fa-whatsapp text-accent text-xl"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-bold text-lg">WhatsApp</h4>
+                                            <p class="text-gray-300">(95) 98121-7811</p>
+                                            <button onclick="abrirWhatsApp()" class="mt-2 bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-4 rounded-lg transition-all">
+                                                <i class="fab fa-whatsapp mr-2"></i>Iniciar Conversa
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Horário de Atendimento -->
+                            <div class="bg-white rounded-2xl p-8 shadow-lg">
+                                <h3 class="text-2xl font-bold text-gray-900 mb-6">Horário de Atendimento</h3>
+                                <div class="space-y-4">
+                                    <div class="flex justify-between items-center py-3 border-b border-gray-200">
+                                        <span class="text-gray-700">Segunda a Sexta</span>
+                                        <span class="font-bold text-gray-900">8:00 - 18:00</span>
+                                    </div>
+                                    <div class="flex justify-between items-center py-3 border-b border-gray-200">
+                                        <span class="text-gray-700">Sábado</span>
+                                        <span class="font-bold text-gray-900">9:00 - 12:00</span>
+                                    </div>
+                                    <div class="flex justify-between items-center py-3">
+                                        <span class="text-gray-700">Plantão 24/7</span>
+                                        <span class="font-bold text-accent">Emergências</span>
+                                    </div>
+                                </div>
+                                <div class="mt-8 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                                    <p class="text-blue-800">
+                                        <i class="fas fa-info-circle mr-2"></i>
+                                        Para emergências fora do horário comercial, nosso plantão está disponível 24/7.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Logo e Sobre -->
+                <div>
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-10 h-10 accent-gradient rounded-lg flex items-center justify-center">
+                            <i class="fas fa-server text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-xl font-black">ELEVE <span class="text-accent">TI</span></h2>
+                            <p class="text-xs text-gray-400">Tecnologia e Sistemas</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        Cuidamos de toda a tecnologia da sua empresa para que você foque apenas no crescimento do negócio.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-accent transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-accent transition-colors">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-accent transition-colors">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Links Rápidos -->
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Links Rápidos</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-gray-400 hover:text-accent transition-colors">Início</a></li>
+                        <li><a href="#servicos" class="text-gray-400 hover:text-accent transition-colors">Serviços</a></li>
+                        <li><a href="#diferenciais" class="text-gray-400 hover:text-accent transition-colors">Diferenciais</a></li>
+                        <li><a href="#sobre" class="text-gray-400 hover:text-accent transition-colors">Sobre Nós</a></li>
+                        <li><a href="#contato" class="text-gray-400 hover:text-accent transition-colors">Contato</a></li>
+                    </ul>
+                </div>
+
+                <!-- Serviços -->
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Serviços</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#servicos" class="text-gray-400 hover:text-accent transition-colors">Infraestrutura de TI</a></li>
+                        <li><a href="#servicos" class="text-gray-400 hover:text-accent transition-colors">Cibersegurança</a></li>
+                        <li><a href="#servicos" class="text-gray-400 hover:text-accent transition-colors">Desenvolvimento</a></li>
+                        <li><a href="#servicos" class="text-gray-400 hover:text-accent transition-colors">Consultoria</a></li>
+                        <li><a href="#servicos" class="text-gray-400 hover:text-accent transition-colors">Gestão Terceirizada</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">
+                        Receba dicas e insights sobre tecnologia para empresas.
+                    </p>
+                    <form class="space-y-3">
+                        <input type="email" placeholder="Seu e-mail" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent text-white">
+                        <button type="submit" class="w-full accent-gradient hover:opacity-90 text-white font-bold py-3 px-6 rounded-lg transition-all">
+                            Inscrever-se
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-gray-800">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm">
+                        © 2024 ELEVE TI - Tecnologia e Sistemas. Todos os direitos reservados.
+                    </p>
+                    <div class="flex space-x-6 mt-4 md:mt-0">
+                        <a href="#" class="text-gray-400 hover:text-accent text-sm transition-colors">Política de Privacidade</a>
+                        <a href="#" class="text-gray-400 hover:text-accent text-sm transition-colors">Termos de Uso</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal de Confirmação -->
+    <div id="confirmationModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full p-8">
+            <div class="text-center mb-6">
+                <i class="fas fa-check-circle text-green-500 text-5xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-center mb-4 text-gray-900">Mensagem Enviada!</h3>
+            <p class="text-gray-700 text-center mb-6">
+                Obrigado pelo seu contato. Nossa equipe entrará em contato em até 24 horas.
+            </p>
+            <button onclick="fecharModal()" class="w-full accent-gradient hover:opacity-90 text-white font-bold py-4 px-6 rounded-xl transition-all duration-300">
+                Fechar
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Dados do site
+        const servicos = [
+            { "id": 1, "nome": "Infraestrutura de TI", "icone": "fa-server" },
+            { "id": 2, "nome": "Cibersegurança", "icone": "fa-shield-alt" },
+            { "id": 3, "nome": "Desenvolvimento", "icone": "fa-code" },
+            { "id": 4, "nome": "Consultoria", "icone": "fa-chart-line" },
+            { "id": 5, "nome": "Gestão Terceirizada", "icone": "fa-cogs" },
+            { "id": 6, "nome": "Suporte", "icone": "fa-headset" }
+        ];
+        
+        // Mobile Menu Toggle
+        document.getElementById('mobileMenuButton').addEventListener('click', function() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+            const icon = this.querySelector('i');
+            if (menu.classList.contains('hidden')) {
+                icon.className = 'fas fa-bars text-2xl';
+            } else {
+                icon.className = 'fas fa-times text-2xl';
+            }
+        });
+        
+        // Funções de navegação suave
+        function scrollToContato() {
+            document.getElementById('contato').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+        
+        function scrollToServicos() {
+            document.getElementById('servicos').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+        
+        // Abrir WhatsApp
+        function abrirWhatsApp() {
+            const telefone = '5595981217811';
+            const mensagem = 'Olá! Gostaria de mais informações sobre os serviços da ELEVE TI.';
+            const url = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
+            window.open(url, '_blank');
+        }
+        
+        // Formulário de Contato
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Coletar dados do formulário
+            const formData = {
+                nome: document.getElementById('nome').value,
+                empresa: document.getElementById('empresa').value,
+                email: document.getElementById('email').value,
+                telefone: document.getElementById('telefone').value,
+                servico: document.getElementById('servico').value,
+                mensagem: document.getElementById('mensagem').value
+            };
+            
+            // Aqui normalmente enviaria para um backend
+            console.log('Formulário enviado:', formData);
+            
+            // Mostrar modal de confirmação
+            document.getElementById('confirmationModal').classList.remove('hidden');
+            document.getElementById('confirmationModal').classList.add('flex');
+            
+            // Limpar formulário
+            this.reset();
+        });
+        
+        function fecharModal() {
+            document.getElementById('confirmationModal').classList.add('hidden');
+            document.getElementById('confirmationModal').classList.remove('flex');
+        }
+        
+        // Fechar modal ao clicar fora
+        document.getElementById('confirmationModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                fecharModal();
+            }
+        });
+        
+        // Fechar modal com ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                fecharModal();
+            }
+        });
+        
+        // Navegação suave para links internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ 
+                        behavior: 'smooth' 
+                    });
+                    
+                    // Fechar menu mobile se aberto
+                    const mobileMenu = document.getElementById('mobileMenu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                        document.getElementById('mobileMenuButton').querySelector('i').className = 'fas fa-bars text-2xl';
+                    }
+                }
+            });
+        });
+        
+        // Adicionar classe sticky ao header ao rolar
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.classList.add('shadow-lg');
+            } else {
+                header.classList.remove('shadow-lg');
+            }
+        });
+        
+        // Inicialização
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Site ELEVE TI carregado com sucesso!');
+        });
+    </script>
+</body>
+</html>
